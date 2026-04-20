@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Estudio Day & Asociados | Abogados Penalistas - Mendoza</title>
-<meta name="description" content="Estudio jurídico especializado en derecho penal en Mendoza. Defensa técnica, querella particular y penal económico ante el fuero provincial y federal.">
+<title>Estudio Day & Asociados | Abogados - Mendoza</title>
+<meta name="description" content="Estudio jurídico en Mendoza con más de 100 años de trayectoria. Especialización en derecho penal, laboral y civil comercial ante el fuero provincial y federal.">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -14,20 +14,27 @@
     --cream: #f5f1ea; --cream-mid: #ede8df;
     --text-dark: #1a1a1a; --text-mid: #4a4a4a; --text-light: #7a7a7a;
     --white: #ffffff;
+    --penal: #0d1b2a;
+    --laboral: #1a3a2a;
+    --civil: #2a1a0d;
   }
   html { scroll-behavior: smooth; }
   body { font-family: 'DM Sans', sans-serif; color: var(--text-dark); background: var(--white); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+  /* NAV */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,27,42,0.97); backdrop-filter: blur(8px); padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; height: 68px; border-bottom: 1px solid rgba(184,151,90,0.25); }
   .nav-logo { font-family: 'Cormorant Garamond', serif; color: var(--gold-light); font-size: 1.15rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 400; transition: color 0.2s; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 400; transition: color 0.2s; }
   .nav-links a:hover { color: var(--gold-light); }
+
+  /* HERO */
   .hero { background: var(--navy); min-height: 100vh; display: flex; align-items: center; padding: 100px 5vw 80px; position: relative; overflow: hidden; }
   .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 45%; height: 100%; background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-light) 100%); clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%); }
   .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
   .hero-content { position: relative; z-index: 2; max-width: 680px; }
   .hero-tag { display: inline-block; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; font-weight: 500; }
-  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 5.5vw, 4.5rem); font-weight: 500; color: var(--white); line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.01em; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 5.5vw, 4.5rem); font-weight: 500; color: var(--white); line-height: 1.1; margin-bottom: 1.5rem; }
   .hero h1 em { font-style: italic; color: var(--gold-light); }
   .hero p { font-size: 1.05rem; color: rgba(255,255,255,0.65); max-width: 520px; margin-bottom: 2.5rem; font-weight: 300; line-height: 1.8; }
   .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
@@ -35,48 +42,100 @@
   .btn-primary:hover { background: var(--gold-light); }
   .btn-secondary { border: 1px solid rgba(184,151,90,0.5); color: rgba(255,255,255,0.8); padding: 0.85rem 2rem; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 400; text-decoration: none; display: inline-block; transition: border-color 0.2s, color 0.2s; }
   .btn-secondary:hover { border-color: var(--gold); color: var(--white); }
-  .stats-bar { background: var(--cream); padding: 2.5rem 5vw; display: flex; justify-content: center; gap: 0; border-bottom: 1px solid var(--cream-mid); flex-wrap: wrap; }
-  .stat-item { text-align: center; padding: 0 3.5rem; border-right: 1px solid rgba(0,0,0,0.1); }
-  .stat-item:last-child { border-right: none; }
-  .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 600; color: var(--navy); line-height: 1; margin-bottom: 0.4rem; }
-  .stat-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-light); font-weight: 400; }
+
+  /* AREAS INTRO */
+  .areas-intro { background: var(--cream); padding: 5rem 5vw; }
+  .areas-intro-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--cream-mid); border: 1.5px solid var(--cream-mid); margin-top: 3rem; }
+  .area-intro-card { background: var(--white); padding: 2.5rem 2rem; cursor: pointer; transition: background 0.25s; text-decoration: none; display: block; }
+  .area-intro-card:hover { background: var(--cream); }
+  .area-intro-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 600; color: rgba(184,151,90,0.2); line-height: 1; margin-bottom: 1rem; }
+  .area-intro-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--navy); margin-bottom: 0.75rem; }
+  .area-intro-card p { font-size: 0.88rem; color: var(--text-mid); line-height: 1.7; font-weight: 300; margin-bottom: 1rem; }
+  .area-intro-link { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
+
+  /* SECTION BASE */
   section { padding: 6rem 5vw; }
   .section-tag { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 500; display: block; margin-bottom: 0.75rem; }
   h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 500; color: var(--navy); line-height: 1.2; margin-bottom: 1rem; }
   .section-intro { font-size: 1rem; color: var(--text-mid); max-width: 580px; margin-bottom: 3.5rem; font-weight: 300; line-height: 1.8; }
-  .areas-bg { background: var(--white); }
-  .areas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5px; background: var(--cream-mid); border: 1.5px solid var(--cream-mid); }
-  .area-card { background: var(--white); padding: 2.5rem 2rem; transition: background 0.25s; }
-  .area-card:hover { background: var(--cream); }
-  .area-icon { width: 40px; height: 2px; background: var(--gold); margin-bottom: 1.5rem; }
-  .area-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 500; color: var(--navy); margin-bottom: 0.75rem; line-height: 1.3; }
-  .area-card p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; font-weight: 300; }
-  .equipo-bg { background: var(--navy); }
-  .equipo-bg h2 { color: var(--white); }
-  .equipo-bg .section-intro { color: rgba(255,255,255,0.55); }
-  .equipo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+
+  /* PENAL SECTION - DESTACADA */
+  .penal-section { background: var(--navy); position: relative; overflow: hidden; }
+  .penal-section::before { content: 'PENAL'; position: absolute; right: -2rem; top: 50%; transform: translateY(-50%); font-family: 'Cormorant Garamond', serif; font-size: 18rem; font-weight: 600; color: rgba(255,255,255,0.02); line-height: 1; pointer-events: none; }
+  .penal-section h2 { color: var(--white); font-size: clamp(2.2rem, 4vw, 3.5rem); }
+  .penal-section .section-tag { color: var(--gold); }
+  .penal-section .section-intro { color: rgba(255,255,255,0.55); max-width: 680px; font-size: 1.05rem; }
+  .penal-areas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(184,151,90,0.15); margin-bottom: 4rem; }
+  .penal-area-card { background: rgba(255,255,255,0.03); padding: 2rem 1.75rem; transition: background 0.25s; }
+  .penal-area-card:hover { background: rgba(255,255,255,0.07); }
+  .penal-area-icon { width: 32px; height: 2px; background: var(--gold); margin-bottom: 1.25rem; }
+  .penal-area-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 500; color: var(--white); margin-bottom: 0.6rem; }
+  .penal-area-card p { font-size: 0.85rem; color: rgba(255,255,255,0.45); line-height: 1.7; font-weight: 300; }
+
+  /* EQUIPO PENAL */
+  .penal-equipo-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; }
+  .penal-equipo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 3rem; }
   .abogado-card { border: 1px solid rgba(184,151,90,0.2); padding: 2rem 1.75rem; transition: border-color 0.25s, background 0.25s; }
   .abogado-card:hover { border-color: rgba(184,151,90,0.5); background: rgba(255,255,255,0.04); }
-  .abogado-iniciales { width: 52px; height: 52px; background: rgba(184,151,90,0.15); border: 1px solid rgba(184,151,90,0.3); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--gold-light); font-weight: 500; margin-bottom: 1.25rem; letter-spacing: 0.05em; }
+  .abogado-iniciales { width: 52px; height: 52px; background: rgba(184,151,90,0.15); border: 1px solid rgba(184,151,90,0.3); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--gold-light); font-weight: 500; margin-bottom: 1.25rem; }
   .abogado-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--white); font-weight: 500; margin-bottom: 0.3rem; }
-  .abogado-rol { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 0.75rem; display: block; font-weight: 400; }
+  .abogado-card h3 a { color: var(--white); text-decoration: none; transition: color 0.2s; }
+  .abogado-card h3 a:hover { color: var(--gold-light); }
+  .abogado-rol { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 0.75rem; display: block; font-weight: 400; }
   .abogado-card p { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.7; font-weight: 300; }
   .abogado-area-tag { display: inline-block; margin-top: 1rem; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(184,151,90,0.7); border: 1px solid rgba(184,151,90,0.25); padding: 0.25rem 0.65rem; }
-  .proceso-bg { background: var(--cream); }
-  .proceso-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0; }
-  .proceso-step { padding: 2rem 1.75rem; border-right: 1px solid rgba(0,0,0,0.08); }
-  .proceso-step:last-child { border-right: none; }
-  .paso-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 600; color: rgba(184,151,90,0.2); line-height: 1; margin-bottom: 0.75rem; }
-  .proceso-step h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--navy); font-weight: 500; margin-bottom: 0.5rem; }
-  .proceso-step p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.65; font-weight: 300; }
-  .blog-bg { background: var(--white); }
-  .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-  .blog-card { border: 1px solid var(--cream-mid); padding: 2rem; transition: border-color 0.25s; text-decoration: none; display: block; }
-  .blog-card:hover { border-color: var(--gold); }
-  .blog-tag { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 500; display: block; margin-bottom: 0.75rem; }
-  .blog-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 500; color: var(--navy); line-height: 1.35; margin-bottom: 0.75rem; }
-  .blog-card p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.65; font-weight: 300; }
-  .blog-link { display: inline-block; margin-top: 1.25rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
+  .abogado-contacto { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.75rem; font-size: 0.75rem; color: var(--gold); text-decoration: none; letter-spacing: 0.05em; }
+  .abogado-contacto:hover { color: var(--gold-light); }
+
+  /* RECURSOS PENAL */
+  .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+  .blog-card { border: 1px solid rgba(184,151,90,0.15); padding: 1.75rem; transition: border-color 0.25s; text-decoration: none; display: block; }
+  .blog-card:hover { border-color: rgba(184,151,90,0.4); background: rgba(255,255,255,0.03); }
+  .blog-tag { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 500; display: block; margin-bottom: 0.6rem; }
+  .blog-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500; color: var(--white); line-height: 1.35; margin-bottom: 0.6rem; }
+  .blog-card p { font-size: 0.82rem; color: rgba(255,255,255,0.4); line-height: 1.6; font-weight: 300; }
+  .blog-link { display: inline-block; margin-top: 1rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
+
+  /* LABORAL SECTION */
+  .laboral-section { background: #f0f4f0; }
+  .laboral-section h2 { color: #1a3a2a; }
+  .laboral-section .section-tag { color: #3a7a5a; }
+  .laboral-section .section-intro { color: #4a5a4a; }
+  .laboral-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+  .laboral-content h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: #1a3a2a; font-weight: 500; margin-bottom: 0.75rem; margin-top: 1.5rem; }
+  .laboral-content p { font-size: 0.92rem; color: #4a5a4a; line-height: 1.75; font-weight: 300; margin-bottom: 1rem; }
+  .laboral-equipo { display: flex; flex-direction: column; gap: 1rem; }
+  .laboral-abogado { background: var(--white); border: 1px solid #c8d8c8; padding: 1.75rem; transition: border-color 0.25s; }
+  .laboral-abogado:hover { border-color: #3a7a5a; }
+  .laboral-iniciales { width: 44px; height: 44px; background: #e0f0e8; border: 1px solid #b0d0b8; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #1a5a3a; font-weight: 500; margin-bottom: 1rem; }
+  .laboral-abogado h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: #1a3a2a; font-weight: 500; margin-bottom: 0.2rem; }
+  .laboral-abogado h4 a { color: #1a3a2a; text-decoration: none; transition: color 0.2s; }
+  .laboral-abogado h4 a:hover { color: #3a7a5a; }
+  .laboral-rol { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: #3a7a5a; display: block; margin-bottom: 0.5rem; font-weight: 500; }
+  .laboral-abogado p { font-size: 0.82rem; color: #6a7a6a; line-height: 1.65; font-weight: 300; }
+  .laboral-contacto { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.6rem; font-size: 0.75rem; color: #3a7a5a; text-decoration: none; }
+  .laboral-contacto:hover { color: #1a5a3a; }
+
+  /* CIVIL SECTION */
+  .civil-section { background: #faf6f0; }
+  .civil-section h2 { color: #3a2010; }
+  .civil-section .section-tag { color: #8a5a2a; }
+  .civil-section .section-intro { color: #5a4a3a; }
+  .civil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+  .civil-content h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: #3a2010; font-weight: 500; margin-bottom: 0.75rem; margin-top: 1.5rem; }
+  .civil-content p { font-size: 0.92rem; color: #5a4a3a; line-height: 1.75; font-weight: 300; margin-bottom: 1rem; }
+  .civil-abogado { background: var(--white); border: 1px solid #e0c8a8; padding: 1.75rem; transition: border-color 0.25s; }
+  .civil-abogado:hover { border-color: #8a5a2a; }
+  .civil-iniciales { width: 44px; height: 44px; background: #f5e8d5; border: 1px solid #d8b888; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #6a3a10; font-weight: 500; margin-bottom: 1rem; }
+  .civil-abogado h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: #3a2010; font-weight: 500; margin-bottom: 0.2rem; }
+  .civil-abogado h4 a { color: #3a2010; text-decoration: none; transition: color 0.2s; }
+  .civil-abogado h4 a:hover { color: #8a5a2a; }
+  .civil-rol { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: #8a5a2a; display: block; margin-bottom: 0.5rem; font-weight: 500; }
+  .civil-abogado p { font-size: 0.82rem; color: #7a6a5a; line-height: 1.65; font-weight: 300; }
+  .civil-contacto { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.6rem; font-size: 0.75rem; color: #8a5a2a; text-decoration: none; }
+  .civil-contacto:hover { color: #6a3a10; }
+
+  /* CONTACTO */
   .contacto-bg { background: var(--navy); }
   .contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
   .contacto-bg h2 { color: var(--white); }
@@ -96,16 +155,22 @@
   .form-group textarea { resize: vertical; min-height: 110px; }
   .form-submit { background: var(--gold); color: var(--navy); padding: 0.9rem 2rem; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.2s; align-self: flex-start; }
   .form-submit:hover { background: var(--gold-light); }
+
+  /* FOOTER */
   footer { background: #070e16; padding: 2.5rem 5vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-top: 1px solid rgba(184,151,90,0.2); }
   .footer-logo { font-family: 'Cormorant Garamond', serif; color: rgba(255,255,255,0.4); font-size: 0.95rem; letter-spacing: 0.08em; text-transform: uppercase; }
   .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.25); font-weight: 300; }
-  .gold-line { height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 5vw; }
-  @media (max-width: 768px) {
+  .gold-line { height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+
+  @media (max-width: 900px) {
     .nav-links { display: none; }
-    .stat-item { border-right: none; padding: 0.75rem 1.5rem; }
-    .contacto-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .proceso-steps { grid-template-columns: 1fr 1fr; }
-    .proceso-step { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.08); }
+    .areas-intro-grid { grid-template-columns: 1fr; }
+    .penal-areas-grid { grid-template-columns: 1fr 1fr; }
+    .penal-equipo-grid { grid-template-columns: 1fr; }
+    .laboral-grid, .civil-grid, .contacto-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+  @media (max-width: 600px) {
+    .penal-areas-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -114,137 +179,204 @@
 <nav>
   <div class="nav-logo">Estudio Day & Asociados</div>
   <ul class="nav-links">
-    <li><a href="#areas">Áreas</a></li>
-    <li><a href="#equipo">Equipo</a></li>
-    <li><a href="#proceso">Proceso</a></li>
-    <li><a href="#recursos">Recursos</a></li>
+    <li><a href="#penal">Penal</a></li>
+    <li><a href="#laboral">Laboral</a></li>
+    <li><a href="#civil">Civil</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
 </nav>
 
+<!-- HERO -->
 <section class="hero" id="inicio">
   <div class="hero-content">
-    <span class="hero-tag">Mendoza, Argentina · Derecho Penal</span>
-    <h1>Defensa penal<br>con <em>precisión</em><br>estratégica</h1>
-    <p>Litigamos en todas las etapas del proceso penal. Especialización en penal económico, delitos tributarios, lavado de activos y defensa técnica ante la justicia federal y provincial de Mendoza.</p>
+    <span class="hero-tag">Mendoza, Argentina · Más de 100 años de trayectoria</span>
+    <h1>Un estudio.<br><em>Tres áreas.</em><br>Una sola firma.</h1>
+    <p>Derecho penal, laboral y civil comercial. Litigación en el fuero provincial y federal de Mendoza con equipos especializados en cada área.</p>
     <div class="hero-ctas">
-      <a href="#contacto" class="btn-primary">Consultar ahora</a>
-      <a href="#areas" class="btn-secondary">Ver áreas de práctica</a>
+      <a href="#penal" class="btn-primary">Área penal</a>
+      <a href="#contacto" class="btn-secondary">Consultar ahora</a>
     </div>
   </div>
 </section>
 
-<div class="stats-bar">
-  <div class="stat-item"><div class="stat-number">+100</div><div class="stat-label">Años de trayectoria</div></div>
-  <div class="stat-item"><div class="stat-number">3</div><div class="stat-label">Abogados penalistas</div></div>
-  <div class="stat-item"><div class="stat-number">2</div><div class="stat-label">Fueros · Provincial y federal</div></div>
-  <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Dedicación penal</div></div>
-</div>
-
-<section class="areas-bg" id="areas">
+<!-- AREAS INTRO -->
+<section class="areas-intro" id="areas">
   <span class="section-tag">Áreas de práctica</span>
-  <h2>Especialización penal<br>integral</h2>
-  <p class="section-intro">Intervenimos en defensa técnica y querella particular en causas de alta complejidad, desde la investigación penal preparatoria hasta la ejecución de la pena.</p>
-  <div class="areas-grid">
-    <div class="area-card"><div class="area-icon"></div><h3>Defensa penal</h3><p>Representación técnica de imputados en todas las etapas del proceso. IPP, juicio oral, recursos de casación e inconstitucionalidad ante la SCJM y el fuero federal.</p></div>
-    <div class="area-card"><div class="area-icon"></div><h3>Querella particular</h3><p>Impulso de la acción penal en representación de víctimas. Estrategia probatoria, control de la investigación fiscal y litigación adversarial en juicio.</p></div>
-    <div class="area-card"><div class="area-icon"></div><h3>Penal económico</h3><p>Delitos tributarios bajo la Ley 27.430, lavado de activos (Ley 25.246), estafas y defraudaciones patrimoniales en contextos empresariales y financieros complejos.</p></div>
-    <div class="area-card"><div class="area-icon"></div><h3>Ejecución penal</h3><p>Libertad condicional, prisión domiciliaria, progresividad del régimen y control jurisdiccional ante el TREPP y el juez de ejecución.</p></div>
-    <div class="area-card"><div class="area-icon"></div><h3>Recursos y casación</h3><p>Planteos de inconstitucionalidad, recursos de casación ante la SCJM y apelaciones en el fuero federal. Litigación de segunda instancia con enfoque estratégico.</p></div>
-    <div class="area-card"><div class="area-icon"></div><h3>Delitos informáticos</h3><p>Ciberdelitos, fraudes digitales y delitos cometidos mediante tecnología. Análisis probatorio de evidencia digital en el marco del proceso penal mendocino.</p></div>
+  <h2>Cobertura jurídica<br>integral en Mendoza</h2>
+  <div class="areas-intro-grid">
+    <a href="#penal" class="area-intro-card">
+      <div class="area-intro-num">01</div>
+      <h3>Derecho Penal</h3>
+      <p>Defensa técnica, querella particular y penal económico ante el fuero provincial y federal. El área central del estudio.</p>
+      <span class="area-intro-link">Ver área →</span>
+    </a>
+    <a href="#laboral" class="area-intro-card">
+      <div class="area-intro-num">02</div>
+      <h3>Derecho Laboral</h3>
+      <p>Representación de trabajadores y empleadores en conflictos individuales y colectivos de trabajo.</p>
+      <span class="area-intro-link">Ver área →</span>
+    </a>
+    <a href="#civil" class="area-intro-card">
+      <div class="area-intro-num">03</div>
+      <h3>Civil y Comercial</h3>
+      <p>Contratos, responsabilidad civil, sucesiones y litigación comercial en el fuero provincial.</p>
+      <span class="area-intro-link">Ver área →</span>
+    </a>
   </div>
 </section>
 
 <div class="gold-line"></div>
 
-<section class="equipo-bg" id="equipo">
-  <span class="section-tag" style="color: var(--gold);">El equipo</span>
-  <h2>Abogados con<br><em style="color: var(--gold-light);">trayectoria comprobada</em></h2>
-  <p class="section-intro">Un equipo consolidado con profunda especialización en litigación penal en Mendoza, tanto en el fuero ordinario como federal.</p>
-  <div class="equipo-grid">
+<!-- PENAL - SECCIÓN DESTACADA -->
+<section class="penal-section" id="penal">
+  <span class="section-tag">Área principal · Derecho penal</span>
+  <h2>Litigación penal<br>con <em style="color: var(--gold-light);">precisión estratégica</em></h2>
+  <p class="section-intro">El área penal es el corazón del estudio. Intervenimos en defensa técnica y querella particular en causas de alta complejidad, desde la investigación preparatoria hasta la ejecución de la pena, en el fuero provincial y federal de Mendoza.</p>
+
+  <div class="penal-areas-grid">
+    <div class="penal-area-card"><div class="penal-area-icon"></div><h3>Defensa penal</h3><p>Representación técnica en IPP, juicio oral, casación e inconstitucionalidad ante la SCJM y el fuero federal.</p></div>
+    <div class="penal-area-card"><div class="penal-area-icon"></div><h3>Querella particular</h3><p>Impulso de la acción penal en representación de víctimas. Estrategia probatoria y litigación adversarial.</p></div>
+    <div class="penal-area-card"><div class="penal-area-icon"></div><h3>Penal económico</h3><p>Delitos tributarios (Ley 27.430), lavado de activos (Ley 25.246), estafas y defraudaciones complejas.</p></div>
+    <div class="penal-area-card"><div class="penal-area-icon"></div><h3>Ejecución penal</h3><p>Libertad condicional, prisión domiciliaria y progresividad del régimen ante el TREPP y el juez de ejecución.</p></div>
+    <div class="penal-area-card"><div class="penal-area-icon"></div><h3>Recursos y casación</h3><p>Inconstitucionalidad, casación ante la SCJM y apelaciones federales con enfoque estratégico.</p></div>
+    <div class="penal-area-card"><div class="penal-area-icon"></div><h3>Delitos informáticos</h3><p>Ciberdelitos y fraudes digitales. Análisis de evidencia digital en el proceso penal mendocino.</p></div>
+  </div>
+
+  <div class="penal-equipo-title">Equipo penal</div>
+  <div class="penal-equipo-grid">
     <div class="abogado-card">
       <div class="abogado-iniciales">JHD</div>
       <h3>Juan H. Day</h3>
       <span class="abogado-rol">Socio fundador</span>
       <p>Abogado penalista con extensa trayectoria en la función judicial y en el ejercicio privado de la profesión. Conduce el equipo penal del estudio.</p>
-      <span class="abogado-area-tag">Derecho penal</span>
+      <span class="abogado-area-tag">Derecho penal</span><br>
+      <a href="mailto:juanday@itcsa.net" class="abogado-contacto">✉ juanday@itcsa.net</a>
     </div>
     <div class="abogado-card">
       <div class="abogado-iniciales">FJD</div>
-      <h3>Francisco J. Díez</h3>
+      <h3><a href="https://wa.me/542616965948" target="_blank" rel="noopener">Francisco J. Díez</a></h3>
       <span class="abogado-rol">Abogado asociado</span>
-      <p>Especialista en derecho penal (Universidad de Mendoza) con posgrado en penal económico (Universidad Champagnat). Defensa y querella en causas federales y provinciales.</p>
-      <span class="abogado-area-tag">Penal económico · Federal</span>
+      <p>Especialista en derecho penal (Universidad de Mendoza) y posgrado en penal económico (Universidad Champagnat). Defensa y querella en causas federales y provinciales.</p>
+      <span class="abogado-area-tag">Penal económico · Federal</span><br>
+      <a href="https://wa.me/542616965948" target="_blank" rel="noopener" class="abogado-contacto">WhatsApp →</a>
     </div>
     <div class="abogado-card">
       <div class="abogado-iniciales">SPD</div>
-      <a href="https://wa.me/5492613079084" target="_blank" rel="noopener" style="text-decoration: none;"><h3 style="transition: color 0.2s;">Santiago Pontis Day</h3></a>
+      <h3><a href="https://wa.me/5492613079084" target="_blank" rel="noopener">Santiago Pontis Day</a></h3>
       <span class="abogado-rol">Abogado asociado</span>
-      <p>Especialista en Ciencias Penales (Universidad de Mendoza). Abogado penalista con actuación en el fuero penal ordinario y federal de Mendoza. Integra el equipo de litigación en juicio oral y recursos.</p>
-      <span class="abogado-area-tag">Derecho penal</span>
+      <p>Especialista en Ciencias Penales (Universidad de Mendoza). Actuación en el fuero penal ordinario y federal de Mendoza. Litigación en juicio oral y recursos.</p>
+      <span class="abogado-area-tag">Derecho penal</span><br>
+      <a href="https://wa.me/5492613079084" target="_blank" rel="noopener" class="abogado-contacto">WhatsApp →</a>
     </div>
   </div>
-</section>
 
-<section class="proceso-bg" id="proceso">
-  <span class="section-tag">Cómo trabajamos</span>
-  <h2>El proceso<br>desde el primer contacto</h2>
-  <p class="section-intro">Cada caso recibe análisis estratégico antes de cualquier decisión procesal. No litigamos de manera reactiva.</p>
-  <div class="proceso-steps">
-    <div class="proceso-step"><div class="paso-num">01</div><h3>Consulta inicial</h3><p>Entrevista confidencial para evaluar el caso, la situación procesal y las alternativas estratégicas disponibles.</p></div>
-    <div class="proceso-step"><div class="paso-num">02</div><h3>Análisis del expediente</h3><p>Revisión del material probatorio, identificación de nulidades, análisis de la calificación legal y evaluación de riesgos.</p></div>
-    <div class="proceso-step"><div class="paso-num">03</div><h3>Estrategia procesal</h3><p>Definición del plan de acción: defensa, querella, recursos o salidas alternativas al conflicto según el caso.</p></div>
-    <div class="proceso-step"><div class="paso-num">04</div><h3>Litigación activa</h3><p>Actuación en audiencias, presentación de escritos, control de la investigación y representación en juicio oral.</p></div>
-    <div class="proceso-step"><div class="paso-num">05</div><h3>Seguimiento continuo</h3><p>Información permanente al cliente sobre el estado del proceso y las decisiones adoptadas.</p></div>
+  <div class="penal-equipo-title" style="margin-top: 3rem;">Recursos y artículos penales</div>
+  <div class="blog-grid">
+    <a href="articulo1.html" class="blog-card">
+      <span class="blog-tag">Imputados</span>
+      <h3>Qué hacer si te imputan en una causa penal en Mendoza</h3>
+      <p>Las primeras decisiones tras una imputación son las más determinantes para el resultado del proceso.</p>
+      <span class="blog-link">Leer →</span>
+    </a>
+    <a href="articulo2.html" class="blog-card">
+      <span class="blog-tag">Libertad</span>
+      <h3>Excarcelación y prisión domiciliaria en Mendoza</h3>
+      <p>Mecanismos para obtener la libertad durante el proceso penal y cómo funciona la defensa en la audiencia.</p>
+      <span class="blog-link">Leer →</span>
+    </a>
+    <a href="articulo3.html" class="blog-card">
+      <span class="blog-tag">Penal económico</span>
+      <h3>Delitos tributarios: cuándo hay responsabilidad penal</h3>
+      <p>Cuándo el incumplimiento impositivo genera consecuencias penales ante el fuero federal.</p>
+      <span class="blog-link">Leer →</span>
+    </a>
+    <a href="articulo4.html" class="blog-card">
+      <span class="blog-tag">Víctimas</span>
+      <h3>Querella particular en Mendoza: cómo constituirse</h3>
+      <p>La víctima puede asumir un rol activo en la persecución penal. Cuándo tiene sentido y qué implica.</p>
+      <span class="blog-link">Leer →</span>
+    </a>
   </div>
 </section>
 
 <div class="gold-line"></div>
 
-<section class="blog-bg" id="recursos">
-  <span class="section-tag">Recursos</span>
-  <h2>Información penal<br>para tomar mejores decisiones</h2>
-  <p class="section-intro">Artículos escritos por el equipo del estudio sobre temas que afectan a imputados, víctimas y empresas en el proceso penal argentino.</p>
-  <div class="blog-grid">
-    <a href="articulo1.html" class="blog-card">
-      <span class="blog-tag">Imputados</span>
-      <h3>Qué hacer si te imputan en una causa penal en Mendoza</h3>
-      <p>Las primeras decisiones que se toman tras una imputación son frecuentemente las más determinantes para el resultado del proceso.</p>
-      <span class="blog-link">Leer artículo →</span>
-    </a>
-    <a href="articulo2.html" class="blog-card">
-      <span class="blog-tag">Libertad</span>
-      <h3>Excarcelación y prisión domiciliaria en Mendoza: cómo funciona</h3>
-      <p>La prisión preventiva es una medida cautelar, no una pena. Conocé los mecanismos para obtener la libertad durante el proceso.</p>
-      <span class="blog-link">Leer artículo →</span>
-    </a>
-    <a href="articulo3.html" class="blog-card">
-      <span class="blog-tag">Penal económico</span>
-      <h3>Delitos tributarios: cuándo hay responsabilidad penal y cómo defenderse</h3>
-      <p>Cuándo el incumplimiento impositivo genera consecuencias penales y qué herramientas de defensa existen ante el fuero federal.</p>
-      <span class="blog-link">Leer artículo →</span>
-    </a>
-    <a href="articulo4.html" class="blog-card">
-      <span class="blog-tag">Víctimas</span>
-      <h3>Querella particular en Mendoza: cómo constituirse y por qué conviene</h3>
-      <p>La víctima puede asumir un rol activo en la persecución penal. Explicamos cuándo tiene sentido y qué implica en la práctica.</p>
-      <span class="blog-link">Leer artículo →</span>
-    </a>
+<!-- LABORAL -->
+<section class="laboral-section" id="laboral">
+  <span class="section-tag">Área laboral</span>
+  <h2>Derecho Laboral</h2>
+  <p class="section-intro">Representación de trabajadores y empleadores en conflictos laborales individuales y colectivos ante la justicia provincial de Mendoza.</p>
+
+  <div class="laboral-grid">
+    <div class="laboral-content">
+      <h3>Qué abarcamos</h3>
+      <p>El área laboral del estudio asesora y representa tanto a trabajadores como a empleadores en toda clase de conflictos derivados de la relación de trabajo. Desde despidos y accidentes laborales hasta negociaciones colectivas y reestructuraciones empresariales.</p>
+      <h3>Principales materias</h3>
+      <p>Despidos justificados e injustificados, liquidaciones laborales, accidentes de trabajo y enfermedades profesionales, conflictos colectivos, multas por trabajo no registrado, y asesoramiento preventivo a empresas en materia de cumplimiento laboral.</p>
+      <p>Para consultas sobre esta área, contactá directamente a los profesionales del equipo.</p>
+    </div>
+    <div class="laboral-equipo">
+      <div class="laboral-abogado">
+        <div class="laboral-iniciales">IRD</div>
+        <h4><a href="https://wa.me/5492616146030" target="_blank" rel="noopener">Ignacio R. Day</a></h4>
+        <span class="laboral-rol">Responsable del área laboral</span>
+        <p>Especialista en derecho laboral. Representación de trabajadores y empleadores en el fuero laboral de Mendoza.</p>
+        <a href="https://wa.me/5492616146030" target="_blank" rel="noopener" class="laboral-contacto">WhatsApp →</a>
+      </div>
+      <div class="laboral-abogado">
+        <div class="laboral-iniciales">ES</div>
+        <h4><a href="https://wa.me/5492615158690" target="_blank" rel="noopener">Eusebio Sánchez</a></h4>
+        <span class="laboral-rol">Abogado · Área laboral</span>
+        <p>Abogado integrante del equipo laboral del estudio. Actuación en litigios laborales ante el fuero provincial de Mendoza.</p>
+        <a href="https://wa.me/5492615158690" target="_blank" rel="noopener" class="laboral-contacto">WhatsApp →</a>
+      </div>
+    </div>
   </div>
 </section>
 
+<div class="gold-line"></div>
+
+<!-- CIVIL -->
+<section class="civil-section" id="civil">
+  <span class="section-tag">Área civil y comercial</span>
+  <h2>Civil y Comercial</h2>
+  <p class="section-intro">Asesoramiento y litigación en derecho civil y comercial. Contratos, responsabilidad civil, sucesiones y conflictos patrimoniales complejos.</p>
+
+  <div class="civil-grid">
+    <div class="civil-content">
+      <h3>Qué abarcamos</h3>
+      <p>El área civil y comercial del estudio interviene en una amplia variedad de conflictos patrimoniales y contractuales ante el fuero civil y comercial de Mendoza. Combina sólida formación académica con experiencia en litigación.</p>
+      <h3>Principales materias</h3>
+      <p>Contratos civiles y comerciales, responsabilidad civil extracontractual, daños y perjuicios, derecho sucesorio, conflictos societarios, cobro de deudas y ejecuciones, y asesoramiento preventivo en operaciones patrimoniales.</p>
+      <p>Para consultas sobre esta área, contactá directamente al profesional del equipo.</p>
+    </div>
+    <div>
+      <div class="civil-abogado">
+        <div class="civil-iniciales">RPD</div>
+        <h4><a href="https://wa.me/5492613079083" target="_blank" rel="noopener">Ramiro Pontis Day</a></h4>
+        <span class="civil-rol">Responsable del área civil y comercial</span>
+        <p>Magíster en Derecho Civil por la Universidad Austral. Especialización en litigación civil y comercial compleja en el fuero provincial de Mendoza.</p>
+        <a href="https://wa.me/5492613079083" target="_blank" rel="noopener" class="civil-contacto">WhatsApp →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-line"></div>
+
+<!-- CONTACTO -->
 <section class="contacto-bg" id="contacto">
   <div class="contacto-grid">
     <div>
-      <span class="section-tag" style="color: var(--gold);">Contacto</span>
+      <span class="section-tag" style="color: var(--gold);">Contacto general</span>
       <h2>Consultanos<br>sin compromiso</h2>
-      <p class="section-intro">Atendemos causas penales en Mendoza, tanto en el fuero provincial como federal. La consulta inicial es confidencial.</p>
+      <p class="section-intro">Atendemos en todas las áreas del derecho. La consulta inicial es confidencial.</p>
       <div class="contacto-items">
         <div class="contacto-item">
           <div class="contacto-dot"></div>
           <div>
-            <div class="contacto-item-label">WhatsApp / Teléfono</div>
-            <div class="contacto-item-value"><a href="https://wa.me/542616965948">+54 261 696-5948</a></div>
+            <div class="contacto-item-label">WhatsApp · Área penal</div>
+            <div class="contacto-item-value"><a href="https://wa.me/542616965948" target="_blank">+54 261 696-5948</a></div>
           </div>
         </div>
         <div class="contacto-item">
@@ -268,14 +400,12 @@
         <div class="form-group"><label>Nombre completo</label><input type="text" placeholder="Tu nombre"></div>
         <div class="form-group"><label>Teléfono o correo</label><input type="text" placeholder="Para contactarte"></div>
         <div class="form-group">
-          <label>Tipo de consulta</label>
+          <label>Área de consulta</label>
           <select style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: var(--white); padding: 0.75rem 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; outline: none; width: 100%; appearance: none;">
             <option value="" style="background: #1a2e42;">Seleccioná una opción</option>
-            <option value="defensa" style="background: #1a2e42;">Defensa penal</option>
-            <option value="querella" style="background: #1a2e42;">Querella particular</option>
-            <option value="economico" style="background: #1a2e42;">Penal económico</option>
-            <option value="ejecucion" style="background: #1a2e42;">Ejecución penal</option>
-            <option value="otro" style="background: #1a2e42;">Otra consulta</option>
+            <option value="penal" style="background: #1a2e42;">Derecho penal</option>
+            <option value="laboral" style="background: #1a2e42;">Derecho laboral</option>
+            <option value="civil" style="background: #1a2e42;">Civil y comercial</option>
           </select>
         </div>
         <div class="form-group"><label>Descripción breve</label><textarea placeholder="Contanos brevemente tu situación..."></textarea></div>
